@@ -2,6 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { Sequelize } = require("sequelize");
+const jwt = require("jsonwebtoken");
 
 require("dotenv").config();
 
@@ -34,6 +35,7 @@ const sequelize = new Sequelize(
 
 // Define a simple route
 app.get("/", (req, res) => {
+  console.log(token);
   res.send("Hello, World!");
 });
 
